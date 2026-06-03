@@ -9,6 +9,7 @@ body {
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #222;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -21,6 +22,9 @@ header {
 nav {
   background-color: #333;
   padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav ul {
@@ -34,10 +38,18 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding-bottom: 3px;
+  transition: color 0.2s;
 }
 
 nav a:hover {
   text-decoration: underline;
+}
+
+nav a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  text-decoration: none;
 }
 
 main {
@@ -51,6 +63,7 @@ section {
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 article {
@@ -58,6 +71,7 @@ article {
   padding: 15px;
   border-left: 4px solid #333;
   background-color: #f9f9f9;
+  transition: background-color 0.3s;
 }
 
 footer {
@@ -65,4 +79,66 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
+}
+
+
+#themeToggle {
+  background-color: #444;
+  color: white;
+  border: 1px solid #555;
+  padding: 8px 16px;
+  margin-top: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+#themeToggle:hover {
+  background-color: #555;
+}
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 99;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#backToTop:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-theme section {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+body.dark-theme article {
+  background-color: #252525;
+  border-left-color: #ffcc00;
+}
+
+body.dark-theme nav {
+  background-color: #1a1a1a;
+}
+
+body.dark-theme #backToTop {
+  background-color: #ffcc00;
+  color: #121212;
 }
